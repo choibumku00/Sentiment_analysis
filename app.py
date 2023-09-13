@@ -209,14 +209,7 @@ class Spacytextblob:
     def __init__(self, script_list):
         self.script_list = script_list
         self.data = []
-        try:
-            self.nlp = spacy.load('en_core_web_sm')
-        except IOError:
-            print("Downloading language model for the spaCy POS tagger\n"
-                "(this may take a few minutes...)")
-            from spacy.cli import download
-            download('en')
-            self.nlp = spacy.load('en_core_web_sm')
+        self.nlp = spacy.load('en_core_web_sm')
         self.nlp.add_pipe('spacytextblob')
         for segment in self.script_list:
             self.spacytextblob_print(segment)
