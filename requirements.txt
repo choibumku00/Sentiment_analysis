@@ -4,3 +4,4 @@ spacytextblob
 youtube-transcript-api
 xlsxwriter
 pandas
+spacy
