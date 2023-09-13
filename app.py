@@ -16,7 +16,7 @@ import os
 # python -m spacy download en
 import sys
 
-terminal_command = "python -m spacy download en" 
+terminal_command = "python -m spacy download en --user" 
 os.system(terminal_command)
 
 #key
