@@ -14,10 +14,6 @@ import queue
 import os
 # 영어 영상인데도 안되는 경우: en_core_web_sm 오류
 # python -m spacy download en
-import sys
-
-terminal_command = "python -m spacy download en" 
-os.system(terminal_command)
 
 #key
 userKey = st.secrets.userKey
