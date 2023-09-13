@@ -1,6 +1,6 @@
 streamlit
 google-api-python-client
-spacytextblob & python -m spacy download en
+spacytextblob
 youtube-transcript-api
 xlsxwriter
 pandas
