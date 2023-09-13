@@ -4,4 +4,4 @@ spacytextblob
 youtube-transcript-api
 xlsxwriter
 pandas
-spacy
+en_core_web_sm
