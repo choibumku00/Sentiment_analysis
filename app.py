@@ -167,7 +167,10 @@ def one_url_to_csv(want_url, want_time, want_num):
 
     sentiments = Spacytextblob([Scripts.scriptData])
     sentiment_df = pd.DataFrame(sentiments.data)
-
+    
+    # polarity와 subjectivity 열의 값을 소수점 아래 4자리까지 표시
+    sentiment_df = sentiment_df.round({'polarity': 4, 'subjectivity': 4})
+    
     # segment counts
     number = 1
     results = []
@@ -185,7 +188,10 @@ def one_url_to_csv(want_url, want_time, want_num):
         seg_df['seg_no'] = seg_no
         v_data = pd.concat([v_data,seg_df])
         seg_no = seg_no + 1
-
+    
+    # pageRank 열의 값을 소수점 아래 4자리까지 표시
+    v_data['pageRank'] = v_data['pageRank'].apply(lambda x: round(x, 4))
+    
     pr_csv_filename = video_title+'.csv' #페이지랭크 파일이름
     sa_csv_filename = video_title+'_sentiment_analisys.csv' # 감성분석 파일 이름
     v_data.to_csv(pr_csv_filename)
